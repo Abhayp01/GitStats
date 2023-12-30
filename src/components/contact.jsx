@@ -47,7 +47,7 @@ function Contact() {
             </div>
             <div className="flex flex-col items-center mx-2">
               <a
-                href="www.leetcode.com/Abhay01"
+                href="https://www.leetcode.com/Abhay01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-700 hover:text-gray-600"
