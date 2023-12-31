@@ -6,6 +6,7 @@ import Root from "./Root.jsx";
 import Contact from "./components/contact.jsx";
 import User from "./components/User.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ErrorPage from "./components/errorpage.jsx";
 import "./index.css";
 
 
@@ -14,11 +15,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Root />}>
-          <Route path="/" element={<App />} />
-          <Route path="/about" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/user/:userid" element={<User />} />
+        <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+          <Route path="/" element={<App />} errorElement={<ErrorPage />}/>
+          <Route path="/about" element={<Blog />} errorElement={<ErrorPage />}/>
+          <Route path="/contact" element={<Contact errorElement={<ErrorPage />}/>} />
+          <Route path="/user/:userid" element={<User/>} errorElement={<ErrorPage />} />
         </Route>
       </Routes>
     </Router>
